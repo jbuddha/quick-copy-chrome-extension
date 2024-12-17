@@ -4,19 +4,14 @@
     "description": "Automatically copy selected text to clipboard",
     "version": "1.0",
     "permissions": [
-      "clipboardWrite"
+        "activeTab",
+        "scripting"
     ],
     "action": {
-      "default_icon": "icon.png"
+        "default_icon": "icon-inactive.png",
+        "default_title": "Click to activate Quick Copy"
     },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
-    "icons": {
-      "48": "icon.png",
-      "128": "icon.png"
+    "background": {
+        "service_worker": "background.js"
     }
-  }
+}
