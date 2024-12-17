@@ -74,19 +74,32 @@ function activate() {
     }
 
     function copyHandler() {
-        const selectedText = window.getSelection().toString().trim();
+        const selection = window.getSelection();
+        const selectedText = selection.toString().trim();
+        
         if (selectedText) {
+            // Store the current selection range
+            const range = selection.getRangeAt(0);
+
+            // Create temporary textarea and copy
             const textarea = document.createElement('textarea');
             textarea.value = selectedText;
             document.body.appendChild(textarea);
             textarea.select();
+            
             try {
                 document.execCommand('copy');
                 showNotification('Text copied!');
             } catch (err) {
                 showNotification('Failed to copy');
             }
+            
+            // Clean up textarea
             document.body.removeChild(textarea);
+
+            // Restore the original selection
+            selection.removeAllRanges();
+            selection.addRange(range);
         }
     }
 
