@@ -23,12 +23,6 @@ This extension requires minimal permissions:
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## Contact
-
-Your Name - [Your Email]
-
-Project Link: [https://github.com/yourusername/quick-copy](https://github.com/yourusername/quick-copy)
-
 ## Acknowledgments
 
 - Icon designed by [credit to icon designer if applicable]
